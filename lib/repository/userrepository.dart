@@ -17,8 +17,8 @@ class UserRepository{
   required LocalAuthRepository localauthrepository}):_client=client,_localAuthRepository=localauthrepository;
     Future< Either<AppFailure,UserModel>> getCurrentUser(String userId) async {
     Map<String, String> requestHeaders = {
-      "Content-Type": "application/json",
-       "Authorization": "Bearer ${_localAuthRepository.isLoggedIn()}"
+    
+     // "Authorization":"Bearer ${_localAuthRepository.isLoggedIn()}"
     };
     var url = Uri.http(Appconfig.baseUrl, "${Appconfig.userUrl}/$userId");
     var response = await _client.get(url, headers: requestHeaders);

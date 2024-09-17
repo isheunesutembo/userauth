@@ -6,6 +6,7 @@ import 'package:userauth/views/log_in_screen.dart';
 import 'package:userauth/views/register_screen.dart';
 Widget _defaultHome=const SignInScreen();
 void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
    final container=ProviderContainer();
   final result=await container.read(localAuthRepositoryProvider).isLoggedIn();
   if(result!=null){

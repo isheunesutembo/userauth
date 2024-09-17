@@ -10,7 +10,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context,WidgetRef ref) {
     final localRepository=ref.watch(localAuthRepositoryProvider);
-    final userData=ref.watch(getCurrentUser(localRepository.readUserId().toString()));
+    final userData=ref.watch(getCurrentUser("${localRepository.readUserId()}"));
     return Scaffold(appBar: AppBar(
       title:const Text("Profile",style: TextStyle(color: Colors.black,fontSize: 20),),
       
