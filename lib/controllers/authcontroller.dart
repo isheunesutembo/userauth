@@ -8,17 +8,17 @@ import 'package:userauth/utils/utils.dart';
 
 
 
-final authControllerProvider=AsyncNotifierProvider<AuthContoller,UserModel>(AuthContoller.new);
-class AuthContoller extends AsyncNotifier<UserModel>{
+final authControllerProvider=AsyncNotifierProvider<AuthContoller,AsyncValue<void>>(AuthContoller.new);
+class AuthContoller extends AsyncNotifier<AsyncValue<void>>{
  late AuthRepository _authRepository;
  late LocalAuthRepository _localAuthRepository;
 
 @override
- UserModel build(){
+ AsyncValue<void> build(){
   _authRepository=ref.watch(authRepositoryProvider);
   _localAuthRepository=ref.watch(localAuthRepositoryProvider);
   
-  return null!;
+  return AsyncValue.data(null);
  }
 
  Future<void> logInWithEmailPassword(String email,String password,BuildContext context)async{

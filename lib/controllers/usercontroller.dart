@@ -3,18 +3,18 @@ import 'package:fpdart/fpdart.dart';
 import 'package:userauth/models/usermodel.dart';
 import 'package:userauth/repository/userrepository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-final userControllerProvider=AsyncNotifierProvider<UserController,AsyncValue<UserModel>>(UserController.new);
+final userControllerProvider=AsyncNotifierProvider<UserController,AsyncValue<void>>(UserController.new);
 
 final getCurrentUser=FutureProvider.family((ref,String userId){
 final userController=ref.watch(userControllerProvider.notifier)
 .getCurrentUser(userId);
 return userController;
 });
-class UserController extends AsyncNotifier<AsyncValue<UserModel>>{
+class UserController extends AsyncNotifier<AsyncValue<void>>{
   late UserRepository _userRepository;
-  AsyncValue<UserModel>build(){
+  AsyncValue<void>build(){
     _userRepository=ref.watch(userRepositoryProvider);
-  return null!;
+  return AsyncValue.data(null);
   }
   Future<UserModel>getCurrentUser(String userId)async{
    final res= await _userRepository.getCurrentUser(userId);

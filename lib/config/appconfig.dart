@@ -4,5 +4,7 @@ class Appconfig {
   static const registerUrl="/api/registerUser";
   static const logInUrl="/api/logInUser";
   static const userUrl="/api/users";
+  static const productsUrl='/api/products';
+  static const fullImageUrl='http://127.0.0.1:4000/';
   
 }
