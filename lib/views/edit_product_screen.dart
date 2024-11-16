@@ -99,7 +99,7 @@ class _AddProductScreenState extends ConsumerState<EditProductScreen> {
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: TextFormField(
-                      initialValue: title.text,
+                      controller: title,
                       enableSuggestions: true,
                       keyboardType: TextInputType.visiblePassword,
                       onChanged: (value) {
@@ -125,7 +125,7 @@ class _AddProductScreenState extends ConsumerState<EditProductScreen> {
                     padding: const EdgeInsets.all(16.0),
                     child: SizedBox(
                       child: TextFormField(
-                        initialValue: description.text,
+                        controller: description,
                         enableSuggestions: true,
                         keyboardType: TextInputType.text,
                         onChanged: (value) {
@@ -156,7 +156,7 @@ class _AddProductScreenState extends ConsumerState<EditProductScreen> {
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: TextFormField(
-                      initialValue: oldPrice.text,
+                      controller: oldPrice,
                       enableSuggestions: true,
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
@@ -181,7 +181,7 @@ class _AddProductScreenState extends ConsumerState<EditProductScreen> {
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: TextFormField(
-                      initialValue: price.text,
+                      controller: price,
                       enableSuggestions: true,
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
@@ -214,7 +214,7 @@ class _AddProductScreenState extends ConsumerState<EditProductScreen> {
                               description.text,
                               double.parse(price.text),
                               double.parse(oldPrice.text),
-                              product.productId!,
+                              product.productId.toString(),
                               context);
                         },
                         style: ElevatedButton.styleFrom(

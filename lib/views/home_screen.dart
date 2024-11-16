@@ -16,6 +16,7 @@ class HomeScreen extends ConsumerWidget {
     final products = ref.watch(getProducts);
 
     return Scaffold(
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
@@ -26,6 +27,7 @@ class HomeScreen extends ConsumerWidget {
         child: const Icon(Icons.edit),
       ),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text(
           "Products",
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

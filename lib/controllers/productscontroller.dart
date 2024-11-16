@@ -17,7 +17,7 @@ final getProducts = FutureProvider((ref) {
 
 class ProductsController extends Notifier<ProductState> {
   late ProductRepository _productRepository;
-  late ProductFilterModel _productFilterModel;
+  
 
   @override
   ProductState build() {
@@ -26,7 +26,7 @@ class ProductsController extends Notifier<ProductState> {
     return const ProductState();
   }
 
-  int _page = 1;
+  
 
   Future<void> createProduct(
       File image,

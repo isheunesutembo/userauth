@@ -62,16 +62,19 @@ class ProductCard extends ConsumerWidget {
                 ref.read(productsController.notifier)
                 .deleteProductById(product.productId!, context);
               },
-              child: Container(
-                  height: 40,
-                  width: 40,
-                  decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.black),
-                  child: const Icon(
-                    Icons.delete,
-                    size: 30,
-                    color: Colors.white,
-                  )),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: Colors.black),
+                    child: const Icon(
+                      Icons.delete,
+                      size: 30,
+                      color: Colors.white,
+                    )),
+              ),
             ))
       ],
     );
